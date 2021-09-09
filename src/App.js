@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect,Suspense } from 'react';
+import { HashRouter } from 'react-router-dom';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+import './App.scss';
+import { Routes } from './routes/routes';
+import { history } from './utils';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    history.listen((location, action) => {
+        // clear alert on location change
+    });
+}, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Suspense fallback={"add loader here"}>
+      <main className="main-wrapper">
+        <HashRouter history={history}>
+          <Routes />
+        </HashRouter>
+      </main>
+      </Suspense>
     </div>
   );
 }
