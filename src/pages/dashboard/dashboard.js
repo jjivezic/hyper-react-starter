@@ -1,12 +1,13 @@
-import React from "react";
+import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div className="container">
+    <div className='container'>
       <h1>
-       Private route dashboard
+        Private route dashboard
       </h1>
-    </div>)
+    </div>
+  )
 }
 
-export default Dashboard;
+export default Dashboard

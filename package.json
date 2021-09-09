@@ -18,6 +18,7 @@
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-toastify": "^8.0.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "web-vitals": "^1.0.1"
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:lint": "eslint src/**/*.js --ignore-pattern node_modules/ --max-warnings=0",
+    "precommit": "npm run test:lint"
   },
   "eslintConfig": {
     "extends": [
@@ -45,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "husky": "^7.0.2",
+    "standard": "^16.0.3"
   }
 }

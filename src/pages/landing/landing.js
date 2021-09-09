@@ -1,7 +1,7 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { modalActions } from '../../store/actions/modal.actions';
-import styles from './landing.module.scss';
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { modalActions } from '../../store/actions/modal.actions'
+import styles from './landing.module.scss'
 const SomeComponets = () => {
   return (
     <div>
@@ -10,15 +10,16 @@ const SomeComponets = () => {
   )
 }
 const Landing = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const openModal = () => {
-    dispatch(modalActions.openModal(<SomeComponets />, 'Some modal', 'lg'));
+    dispatch(modalActions.openModal(<SomeComponets />, 'Some modal', 'lg'))
   }
   return (
     <div className={styles.wrapper}>
       <h2>LANDING </h2>
       <button onClick={openModal}>Open modal</button>
-    </div>)
+    </div>
+  )
 }
 
-export default Landing;
+export default Landing
