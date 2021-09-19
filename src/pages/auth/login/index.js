@@ -4,7 +4,7 @@ import { userActions } from 'store/actions/user.actions'
 
 const Login = () => {
   var [error, setError] = useState(false)
-  var dispatch = useDispatch()
+  const dispatch = useDispatch()
   const [userData, setUserData] = useState({
     email: '',
     password: '',
