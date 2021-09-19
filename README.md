@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Install husky
+npm install husky --save-dev
+Enable Git hooks
+npx husky install
+Create hook
+npx husky add .husky/pre-commit "lint-staged"
+git add .husky/pre-commit
+
+* if not working check path in /.husky pre-comit file should be ./node_modules/.bin/lint-staged instead lint-staged 
