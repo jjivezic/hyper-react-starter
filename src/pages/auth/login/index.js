@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form" style={{ textAlign: 'center' }}>
-      <h6 className="auth-title">Login </h6>
+      <h6 className="auth-title">Login 222</h6>
       <section>
         <div className="form-group custom-input">
           <input
