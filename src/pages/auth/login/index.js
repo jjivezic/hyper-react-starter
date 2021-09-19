@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { userActions } from 'store/actions/user.actions'
 
 const Login = () => {
-  const [error, setError] = useState(false)
+  var [error, setError] = useState(false)
   const dispatch = useDispatch()
   const [userData, setUserData] = useState({
     email: '',

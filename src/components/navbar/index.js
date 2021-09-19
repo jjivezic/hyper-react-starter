@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { userActions } from 'store/actions/user.actions'
-import LanguageSelector from 'components/language/languageSelector'
+import LanguageSelector from 'components/language'
 import './navbar.scss'
 
 const Navbar = () => {
