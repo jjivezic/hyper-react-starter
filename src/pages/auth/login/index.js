@@ -1,42 +1,36 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { userActions } from "store/actions/user.actions";
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { userActions } from 'store/actions/user.actions'
 
 const Login = () => {
-  const [error, setError] = useState(false);
-  const dispatch = useDispatch();
+  const [error, setError] = useState(false)
+  const dispatch = useDispatch()
   const [userData, setUserData] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: ''
+  })
 
   const handleChange = (e) => {
-    setError(false);
-    const { name, value } = e.target;
-    setUserData((userData) => ({ ...userData, [name]: value }));
-  };
+    setError(false)
+    const { name, value } = e.target
+    setUserData((userData) => ({ ...userData, [name]: value }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (validateForm()) {
-      dispatch(userActions.login(userData));
+      dispatch(userActions.login(userData))
     } else {
-      setError(true);
+      setError(true)
     }
-  };
+  }
 
   const validateForm = () => {
-    let a = 3;
-    const b = ++a;
-    return userData.email && userData.password;
-  };
+    return userData.email && userData.password
+  }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="auth-form"
-      style={{ textAlign: "center" }}
-    >
+    <form onSubmit={handleSubmit} className="auth-form" style={{ textAlign: 'center' }}>
       <h6 className="auth-title">Login </h6>
       <section>
         <div className="form-group custom-input">
@@ -69,6 +63,6 @@ const Login = () => {
         SIgn in
       </button>
     </form>
-  );
-};
-export default Login;
+  )
+}
+export default Login
