@@ -1,0 +1,123 @@
+@import "../../styles/variables";
+
+.dropdown-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $light-green;
+}
+.dropdown-title {
+    padding: 20px 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: 0;display: flex;
+    flex-direction: row;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .125)
+}
+.dropdown-title:hover {
+    cursor: pointer;
+}
+.dropdown-title .dropdown-icon {
+    color: $grass-green;
+    flex-basis: 20%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 18px;
+}
+.dropdown-title span {
+    color: $dark-gray;
+    flex-basis: 80%;
+    font-size: 18px;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: center;
+}
+.dropdown-options {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 0;
+    transition: 300ms;
+}
+.dropdown-options.active {
+    display: flex;
+    transition: 300ms;
+}
+.dropdown-options .dropdown-option {
+    display: block;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 16px 16px;
+    padding-left: 3rem;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.dropdown-options .dropdown-option:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    .dropdown-container {
+        width: auto;
+        background-color: $white;
+        max-width: 50%;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        flex-basis: content;
+        align-items: center;
+        font-size: 19px;
+        height: 90%;
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+    }
+    .dropdown-title {
+        padding: 0px 15px;
+        border: none;
+        align-items: center;
+        height: 100%;
+    }
+    .dropdown-title:hover {
+        background-color: $light-gray;
+    }
+    .dropdown-options{
+        display: none;
+        flex-direction: column;
+        padding: 1rem 0;
+        position: absolute;
+        background: white;
+        width: auto;
+        top: 58px;
+        box-shadow: 0 0 7px #d8d8d8ba;
+        border: 1px solid #ddd;
+        border-radius: 16px;
+        transition-duration: 500ms;
+    }
+    .dropdown-container:hover {
+        .dropdown-options.active {
+            display: flex;
+            transition-duration: .5s;
+        }
+    }
+    .dropdown-options .dropdown-option { 
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px 16px;
+    }
+    .dropdown-title .dropdown-icon {
+        flex-basis: auto;
+        padding-left: .5rem;
+        color: $dark-gray;
+    }
+    .dropdown-title span {
+        flex-basis: auto;
+        margin-top: 0;
+        align-items: center;
+    }
+  }

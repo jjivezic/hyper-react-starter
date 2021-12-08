@@ -16,20 +16,30 @@ $yellow-turbo: #ffd21c;
 $turquoise: #2ee9d0;
 $midnight-express: #131734;
 $Bali-Hai: #8f9bb3;
+$dark-gray : #314360;
+$light-gray: rgba(0, 0, 0, 0.04);
+$light-green: #f8fdf3;
+$grass-green: #36c968;
 
-$bg-primary: $black-russian;
-$bg-secondary: $grayish-navy;
+// $bg-primary: $black-russian;
+// $bg-secondary: $grayish-navy;
+// $bg-secondary-opacity:$grayish-navy-opacity;
+// $bg-secondary-darker: $midnight-express;
+// $bg-colored: $pastel-green;
+// $bg-violet: $blue-violet;
+$bg-primary: $white;
+$bg-secondary: $white;
 $bg-secondary-opacity:$grayish-navy-opacity;
 $bg-secondary-darker: $midnight-express;
 $bg-colored: $pastel-green;
 $bg-violet: $blue-violet;
 
-$color-primary: $white;
+$color-primary: $dark-gray;
 $color-secondary: $pastel-green;
 $color-neutral: $waikawa-grey;
 $color-violet: $blue-violet;
-$color-text: $Bali-Hai;
-// $color-text: $white;
+// $color-text: $Bali-Hai;
+$color-text: $black;
 
 $link: $waikawa-grey;
 $link-hover: $pastel-green;

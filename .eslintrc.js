@@ -9,7 +9,8 @@ module.exports = {
   extends: ['standard', 'react-app', 'prettier'],
   plugins: ['babel', 'prettier'],
   rules: {
-    indent: ['error', 2, { SwitchCase: 1 }],
+    // indent: ['error', 2, { SwitchCase: 1 }],
+    indent:'off',
     'no-underscore-dangle': 0,
     'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
     'import/no-named-as-default': 0,
