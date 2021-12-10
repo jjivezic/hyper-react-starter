@@ -11,6 +11,7 @@
     transition: 850ms;
     display: none;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
+    z-index: 10;
   }
 .nav-menu-list{
     top: 0;
