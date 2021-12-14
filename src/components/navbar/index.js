@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import './navbar.scss'
 import SideMenu from './sideMenu'
 import { Link } from 'react-router-dom'
-import { SideMenuLinks } from './navbarStore'
+import { SideMenuLinks } from '../../store/dummyStore'
 import Dropdown from 'components/dropdown'
 import logo from '../../logo.svg'
 

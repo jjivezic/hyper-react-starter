@@ -132,3 +132,66 @@ export const SideMenuLinks = [
     childElems: []
   }
 ]
+
+export const filterSelects = [
+  {
+    label: 'Loan purpose',
+    default: 'Show All',
+    className: '',
+    options: [
+      {
+        field: ' Test 11',
+        value: '11'
+      },
+      {
+        field: ' Test 12',
+        value: '12'
+      }
+    ]
+  },
+  {
+    label: 'Credit score',
+    default: 'Show All',
+    className: '',
+    options: [
+      {
+        field: ' Test 21',
+        value: '21'
+      },
+      {
+        field: ' Test 22',
+        value: '22'
+      }
+    ]
+  },
+  {
+    label: 'Loan amount',
+    default: 'Show All',
+    className: '',
+    options: [
+      {
+        field: ' Test 31',
+        value: '31'
+      },
+      {
+        field: ' Test 32',
+        value: '32'
+      }
+    ]
+  },
+  {
+    label: 'Closing soon?',
+    default: 'Show All',
+    className: '',
+    options: [
+      {
+        field: ' Test 41',
+        value: '41'
+      },
+      {
+        field: ' Test 42',
+        value: '42'
+      }
+    ]
+  }
+]

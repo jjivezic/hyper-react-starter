@@ -5,7 +5,7 @@
   width: 100%;
 }
 .container {
-  padding: 0 12px;
+  padding: 0 25px;
   max-width: 100vw;
   width: 100%;
   margin: 0;
@@ -13,6 +13,10 @@
   flex-grow: 0;
   box-sizing: border-box;
   justify-content: center;
+  flex-direction: column;
+  .row {
+    flex-direction: row;
+  }
 }
 
 .container-fluid-wrapper {
@@ -24,6 +28,14 @@
 @media screen and (min-width:768px) {
   .container-wrapper {
     padding: 0 30px;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .container {
+      padding: 0 24px;
+      max-width: 1200px;
+      margin: 0 auto;
   }
 }
 

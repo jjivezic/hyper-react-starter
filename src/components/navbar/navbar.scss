@@ -140,6 +140,7 @@ header {
   }
   .menu-links-container {
     display: flex;
+    z-index: 100;
   }
   .logo-container.nav-item {
     flex-basis: 20%;

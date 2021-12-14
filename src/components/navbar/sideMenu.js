@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './sideMenu.scss'
-import { SideMenuLinks } from './navbarStore'
+import { SideMenuLinks } from '../../store/dummyStore'
 import Dropdown from 'components/dropdown'
 
 const SideMenu = (props) => {

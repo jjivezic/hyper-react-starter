@@ -1,0 +1,30 @@
+@import "../../../styles//variables";
+
+.filterWrapper {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0 0 0 5px $gray10;
+    border-radius: 10px;
+    opacity: 1;
+
+    h3 {
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+        padding: 1rem;
+        letter-spacing: 0px;
+        color: $gray70;
+        text-align: left;
+        font-weight: 400;
+    }
+
+    .filterBody {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:992px){
+    .filterBody{
+        flex-direction: row !important;
+    }
+}
