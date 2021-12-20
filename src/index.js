@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './App'
 import './i18n'
-import { store } from './store/store'
+import store from 'store/store'
 import reportWebVitals from './reportWebVitals'
+console.log('storeeeee', store)
 
 ReactDOM.render(
   <React.StrictMode>

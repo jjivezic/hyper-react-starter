@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { userActions } from 'store/actions/user.actions'
-
+// import { useDispatch } from 'react-redux'
+// import { userActions } from 'store/actions/user.actions'
+// import { userActions } from 'store/actions/user.actions'
+// import { login } from 'store/reducers/auth.reducer'
 const Login = () => {
   const [error, setError] = useState(false)
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const [userData, setUserData] = useState({
     email: '',
     password: ''
@@ -19,7 +20,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (validateForm()) {
-      dispatch(userActions.login(userData))
+      //  dispatch(userActions.login(userData))
+      //  dispatch(userActions.login(userData))
     } else {
       setError(true)
     }
