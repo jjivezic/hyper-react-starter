@@ -5,7 +5,7 @@ import App from './App'
 import './i18n'
 import store from 'store/store'
 import reportWebVitals from './reportWebVitals'
-console.log('storeeeee', store)
+console.log('storeeeee222222222222', store)
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 // import { useDispatch } from 'react-redux'
 // import { userActions } from 'store/actions/user.actions'
 // import { userActions } from 'store/actions/user.actions'
-// import { login } from 'store/reducers/auth.reducer'
+import { login } from 'store/reducers/auth/thunk'
+
 const Login = () => {
+  const store = useSelector((state) => state)
   const [error, setError] = useState(false)
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const [userData, setUserData] = useState({
     email: '',
     password: ''
   })
-
+  console.log('Sotree in LOGIN', store)
   const handleChange = (e) => {
     setError(false)
     const { name, value } = e.target
@@ -20,8 +23,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (validateForm()) {
-      //  dispatch(userActions.login(userData))
-      //  dispatch(userActions.login(userData))
+      const b = await dispatch(login({ data: userData, mode: 'login' }))
+      console.log('after', b)
+      console.log('Sotree in LOGIN3333', store)
     } else {
       setError(true)
     }
@@ -30,9 +34,13 @@ const Login = () => {
   const validateForm = () => {
     return userData.email && userData.password
   }
+  if (store.auth.error) {
+    console.log('greskaaaa', store.auth)
+  }
 
   return (
     <form onSubmit={handleSubmit} className="auth-form" style={{ textAlign: 'center' }}>
+      {store.auth.error && <h1>Greska000</h1>}
       <h6 className="auth-title">Login 222</h6>
       <section>
         <div className="form-group custom-input">
