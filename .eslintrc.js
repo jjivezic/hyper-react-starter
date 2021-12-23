@@ -18,6 +18,16 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'object-curly-spacing': ['error', 'always'],
-    'arrow-parens': ['error', 'as-needed']
+    'arrow-parens': ['error', 'as-needed'],
+    'no-var': 2,
+    'jsx-a11y/alt-text': [2, {
+      'elements': ['img', 'object', 'area', "input[type=\"image\"]"],
+      'img': ['Image'],
+      'object': ['Object'],
+      'area': ['Area'],
+      "input[type=\"image\"]": ['InputImage']
+    }],
+    'array-callback-return': ["off", { checkForEach: true }],
+    'eqeqeq': ["error", "always"]
   }
 }
