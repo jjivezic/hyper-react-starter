@@ -9,9 +9,9 @@ import Dashboard from 'pages/dashboard'
 const Routes = () => {
   return (
     <Switch>
-      <PublicRoute exact path='/' component={Landing} />
-      <PublicRoute path='/login' component={Login} />
-      <PrivateRoute path='/app' component={Dashboard} />
+      <PublicRoute exact path="/" component={Landing} />
+      <PublicRoute path="/login" component={Login} />
+      <PrivateRoute path="/app" component={Dashboard} />
     </Switch>
   )
 }

@@ -1,10 +1,10 @@
 $white: #ffffff;
 $black: #000000;
-$lightGray:#dfdfdf;
+$lightGray: #dfdfdf;
 $black-russian: #090d28;
 $black-russian-opacity: rgba(9, 13, 40, 0.65);
 $grayish-navy: #181c3a;
-$grayish-navy-opacity:rgba(24, 28, 58, 0.65);
+$grayish-navy-opacity: rgba(24, 28, 58, 0.65);
 $waikawa-grey: #646b9b;
 $blue-violet: #8d29ff;
 $pastel-green: #00c84a;
@@ -19,7 +19,7 @@ $Bali-Hai: #8f9bb3;
 
 $bg-primary: $black-russian;
 $bg-secondary: $grayish-navy;
-$bg-secondary-opacity:$grayish-navy-opacity;
+$bg-secondary-opacity: $grayish-navy-opacity;
 $bg-secondary-darker: $midnight-express;
 $bg-colored: $pastel-green;
 $bg-violet: $blue-violet;
@@ -50,8 +50,6 @@ $input-color: $white;
 $input-placeholder: $waikawa-grey;
 $input-active-border: $blue-violet;
 
-$font-primary: "Arial";
-$font-primary-bold: "Arial";
-$font-secondary: "Arial-Black";
-
-
+$font-primary: 'Arial';
+$font-primary-bold: 'Arial';
+$font-secondary: 'Arial-Black';

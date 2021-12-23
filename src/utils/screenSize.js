@@ -1,4 +1,3 @@
-
 // Use in component like this   const { isMobile,width,height } = useWindowDimensions();
 import { useState, useEffect } from 'react'
 const getWindowDimensions = () => {
@@ -13,7 +12,7 @@ const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
 
   useEffect(() => {
-    function handleResize () {
+    function handleResize() {
       setWindowDimensions(getWindowDimensions())
     }
 

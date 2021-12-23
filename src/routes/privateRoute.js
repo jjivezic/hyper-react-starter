@@ -6,14 +6,16 @@ import { localStorageService } from 'services/localStorage.service'
 export const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
-      {...rest} render={props => {
-        return localStorageService.isAuth()
-          ? <MainWrapper>
+      {...rest}
+      render={props => {
+        return localStorageService.isAuth() ? (
+          <MainWrapper>
             <Component {...props} {...rest} />
           </MainWrapper>
-          : <Redirect to='/' />
+        ) : (
+          <Redirect to="/" />
+        )
       }}
     />
-
   )
 }

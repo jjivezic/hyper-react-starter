@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { login } from 'store/reducers/auth/thunk'
 
 const Login = () => {
-  const store = useSelector((state) => state)
+  const store = useSelector(state => state)
   const [error, setError] = useState(false)
   const dispatch = useDispatch()
   const [userData, setUserData] = useState({
@@ -14,13 +14,13 @@ const Login = () => {
     password: ''
   })
   console.log('Sotree in LOGIN', store)
-  const handleChange = (e) => {
+  const handleChange = e => {
     setError(false)
     const { name, value } = e.target
-    setUserData((userData) => ({ ...userData, [name]: value }))
+    setUserData(userData => ({ ...userData, [name]: value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault()
     if (validateForm()) {
       const b = await dispatch(login({ data: userData, mode: 'login' }))

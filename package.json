@@ -30,7 +30,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:lint": "eslint src --ext .js",
-    "fix:lint": "eslint --fix src --ext .js"
+    "fix:lint": "eslint --fix src --ext .js",
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
