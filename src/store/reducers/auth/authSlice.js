@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-// import userService from 'services/user.service'
 import { login } from './thunk'
-// import { login } from 'store/actions/user.actions'
+
 const initialUser = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
 const initialState = {
   user: initialUser,
@@ -9,11 +8,6 @@ const initialState = {
   isModifying: false,
   error: null
 }
-// export const login = createAsyncThunk('auth/login', async (data) => {
-//   console.log('1111111111111111', data)
-//   return userService.login(data)
-// })
-
 const notSubmitting = (state) => {
   console.log('notSubmitting')
   state.isModifying = false
