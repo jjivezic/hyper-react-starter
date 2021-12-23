@@ -6,8 +6,8 @@ const defaultOptions = {
 }
 
 // types: success, info, warn, error
-function show (type, message, options) {
-  const toastOptions = (!options) ? defaultOptions : options
+function show(type, message, options) {
+  const toastOptions = !options ? defaultOptions : options
   toast[type](message, toastOptions)
 }
 

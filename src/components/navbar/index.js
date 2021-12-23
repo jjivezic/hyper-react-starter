@@ -19,20 +19,30 @@ const Navbar = () => {
       <h3>STARTER</h3>
       <ul>
         <li>
-          <NavLink exact to='/'>{t('navbar.link.home')}</NavLink>
+          <NavLink exact to="/">
+            {t('navbar.link.home')}
+          </NavLink>
         </li>
-        {store.auth.user && <li>
-          <NavLink to='/app'>{t('navbar.link.dashboard')}</NavLink>
-        </li>}
-        {!store.auth.user && <li>
-          <NavLink to='/login'>{t('navbar.link.login')}</NavLink>
-        </li>}
+        {store.auth.user && (
+          <li>
+            <NavLink to="/app">{t('navbar.link.dashboard')}</NavLink>
+          </li>
+        )}
+        {!store.auth.user && (
+          <li>
+            <NavLink to="/login">{t('navbar.link.login')}</NavLink>
+          </li>
+        )}
         <li>
-          {store.auth.user && <a href='#' onClick={logout}>Logout</a>}
+          {store.auth.user && (
+            <a href="#" onClick={logout}>
+              Logout
+            </a>
+          )}
         </li>
       </ul>
       <ul>
-        <div className='lng-Link'>
+        <div className="lng-Link">
           <LanguageSelector />
         </div>
       </ul>

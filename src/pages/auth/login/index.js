@@ -10,13 +10,13 @@ const Login = () => {
     password: ''
   })
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setError(false)
     const { name, value } = e.target
-    setUserData((userData) => ({ ...userData, [name]: value }))
+    setUserData(userData => ({ ...userData, [name]: value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault()
     if (validateForm()) {
       dispatch(userActions.login(userData))

@@ -1,8 +1,7 @@
-
 import httpService from './http.service'
 
 class UserService {
-  async login (user) {
+  async login(user) {
     console.log('User', user)
     // return httpService.apiRequest('post', 'user/login', user);
     return {
@@ -11,23 +10,23 @@ class UserService {
     }
   }
 
-  async logout () {
+  async logout() {
     localStorage.removeItem('user')
   }
 
-  async register (user) {
+  async register(user) {
     return httpService.apiRequest('post', 'user/register', user)
   }
 
-  async getUserById (id) {
+  async getUserById(id) {
     return httpService.apiRequest('get', `user/${id}`)
   }
 
-  async listAllCompanyUsers (companyId) {
+  async listAllCompanyUsers(companyId) {
     return httpService.apiRequest('get', `user/company/${companyId}`)
   }
 
-  async updateUser (user) {
+  async updateUser(user) {
     return httpService.apiRequest('put', `user/${user._id}`, user)
   }
 }

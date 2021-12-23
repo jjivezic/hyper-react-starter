@@ -5,7 +5,8 @@ import { MainWrapper } from './mainWrapper'
 export const PublicRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
-      {...rest} render={props => {
+      {...rest}
+      render={props => {
         return (
           <MainWrapper>
             <Component {...props} {...rest} />

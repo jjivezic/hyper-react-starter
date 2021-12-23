@@ -12,11 +12,11 @@ const ModalWrapper = ({ show, content, size = 'md' }) => {
     dispatch(modalActions.closeModal())
   }
   return (
-    <div className='modal-c'>
+    <div className="modal-c">
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        contentLabel='Custom modal'
+        contentLabel="Custom modal"
         className={`${styles.customModal} ${styles[size]}`}
         overlayClassName={styles.customOverlay}
         ariaHideApp={false}
@@ -24,7 +24,9 @@ const ModalWrapper = ({ show, content, size = 'md' }) => {
         <div className={styles.modalBody}>
           {/* <PerfectScrollbar className="purpleScroll"> */}
           <div className={styles.scrollWrapper}>
-            <span className={styles.close} onClick={closeModal}><i className='fa fa-times' aria-hidden='true' /></span>
+            <span className={styles.close} onClick={closeModal}>
+              <i className="fa fa-times" aria-hidden="true" />
+            </span>
             {content}
           </div>
           {/* </PerfectScrollbar> */}

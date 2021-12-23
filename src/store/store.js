@@ -11,7 +11,4 @@ if (process.env.REACT_APP_ENVIROMENT !== 'prod') {
   middlewares.push(loggerMiddleware)
 }
 
-export const store = createStore(
-  rootReducer,
-  applyMiddleware(...middlewares)
-)
+export const store = createStore(rootReducer, applyMiddleware(...middlewares))

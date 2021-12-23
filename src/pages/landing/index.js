@@ -3,11 +3,7 @@ import { useDispatch } from 'react-redux'
 import { modalActions } from '../../store/actions/modal.actions'
 import styles from './landing.module.scss'
 const SomeComponets = () => {
-  return (
-    <div>
-      Add some Modal Content
-    </div>
-  )
+  return <div>Add some Modal Content</div>
 }
 const Landing = () => {
   const dispatch = useDispatch()

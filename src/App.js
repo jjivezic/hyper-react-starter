@@ -14,9 +14,9 @@ const App = () => {
   }, [])
 
   return (
-    <div className='App'>
-      <Suspense fallback='add loader here'>
-        <main className='main-wrapper'>
+    <div className="App">
+      <Suspense fallback="add loader here">
+        <main className="main-wrapper">
           <HashRouter history={history}>
             <Routes />
           </HashRouter>

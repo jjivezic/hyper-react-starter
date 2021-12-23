@@ -3,15 +3,18 @@ import { localStorageService } from './localStorage.service'
 import { url } from '../environment'
 import toastService from './toastService'
 
-axios.interceptors.response.use((response) => {
-  // Returns response body
-  return response.data
-}, async (error) => {
-  // Handle response error
-  _handleError(error)
-  return Promise.reject(error)
-  // }
-})
+axios.interceptors.response.use(
+  response => {
+    // Returns response body
+    return response.data
+  },
+  async error => {
+    // Handle response error
+    _handleError(error)
+    return Promise.reject(error)
+    // }
+  }
+)
 // const refreshToken = async (err) => {
 //     let response = await apiRequest('get', 'user/token/refreshToken');
 //     if (response) {
@@ -32,11 +35,12 @@ const apiRequest = async (method, apiUrl, body, headers) => {
   try {
     const apiToken = localStorageService.getSessionToken()
     const refreshToken = localStorageService.getSessionRefreshToken()
-    const requestHeaders = (!headers) ? {} : headers
+    const requestHeaders = !headers ? {} : headers
     if (apiToken) requestHeaders['x-access-token'] = apiToken
     if (refreshToken) requestHeaders['x-refresh-access-token'] = refreshToken
     if (method === 'get' || method === 'delete') return axios[method](url + apiUrl, { headers: requestHeaders })
-    else if (method === 'post' || method === 'put' || method === 'patch') return axios[method](url + apiUrl, body, { headers: requestHeaders })
+    else if (method === 'post' || method === 'put' || method === 'patch')
+      return axios[method](url + apiUrl, body, { headers: requestHeaders })
   } catch (err) {
     _handleError(err)
   }
@@ -44,7 +48,7 @@ const apiRequest = async (method, apiUrl, body, headers) => {
 
 const outsideRequest = async (method, url, body, headers) => {
   try {
-    const requestHeaders = (!headers) ? {} : headers
+    const requestHeaders = !headers ? {} : headers
     if (method === 'get' || method === 'delete') return axios[method](url, { headers: requestHeaders })
     else if (method === 'post' || method === 'put') return axios[method](url, body, { headers })
   } catch (err) {
@@ -52,7 +56,7 @@ const outsideRequest = async (method, url, body, headers) => {
   }
 }
 
-const _handleError = async (err) => {
+const _handleError = async err => {
   if (err && err.response) {
     if (err.response.status === 403) {
       localStorage.destroy()
