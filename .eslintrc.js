@@ -16,6 +16,9 @@ module.exports = {
     'import/no-named-as-default-member': 0,
     semi: ['error', 'never'],
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
+    'object-curly-spacing': ['error', 'always'],
+    'arrow-parens': ['error', 'always'],
+    'multiline-ternary': ["error", "always"]
   }
 }
