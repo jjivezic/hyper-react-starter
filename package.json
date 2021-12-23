@@ -30,7 +30,8 @@
     "eject": "react-scripts eject",
     "test:lint": "eslint src --ext .js",
     "fix:lint": "eslint --fix src --ext .js",
-    "format": "prettier --write ."
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json}",
+    "formatCss": "prettier --write src/**/*.{scss,css}"
   },
   "husky": {
     "hooks": {
