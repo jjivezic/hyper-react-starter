@@ -4,7 +4,6 @@ import ModalWrapper from 'components/modal'
 import { useSelector } from 'react-redux'
 export const MainWrapper = props => {
   const store = useSelector(state => state)
-  console.log('store modalllll', store)
 
   return (
     <div className="main-wraper">

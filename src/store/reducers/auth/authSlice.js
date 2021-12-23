@@ -28,7 +28,7 @@ const slice = createSlice({
     addUser: (state, action) => {
       state.loading = true
       state.user = action.payload
-      console.log('slcie add', state, action)
+      console.log('reducers addUser', state, action)
     },
     failUser: (state, action) => {
       state.loading = true

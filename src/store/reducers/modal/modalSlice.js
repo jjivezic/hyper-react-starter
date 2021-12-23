@@ -10,7 +10,6 @@ export const slice = createSlice({
   initialState,
   reducers: {
     openModal: (state, action) => {
-      console.log('AAAAAAAAAAAAAAAAAAA', action)
       const { content, show, name, size } = action.payload
       state.content = content
       state.show = show

@@ -7,9 +7,10 @@ export const login = createAsyncThunk('auth/login', async (params, thunkAPI) => 
     const res = await userService.login(params)
     console.log('11111111111111res', res)
     thunkAPI.dispatch(addUser(res))
+    return res
   } catch (e) {
-    console.log('111111111111erorr', e)
-    thunkAPI.dispatch(failUser('Fail login'))
-    console.error(e)
+    console.log('111111111111erorr', e.response.data.error.message)
+    thunkAPI.dispatch(failUser(e.response.data.error.message))
+    return thunkAPI.rejectWithValue(e)
   }
 })

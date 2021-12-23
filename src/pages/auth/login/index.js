@@ -39,8 +39,8 @@ const Login = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="auth-form" style={{ textAlign: 'center' }}>
-      {store.auth.error && <h1>Greska000</h1>}
+    <form className="auth-form" style={{ textAlign: 'center' }}>
+      {store.auth.error && <h1>{store.auth.error}</h1>}
       <h6 className="auth-title">Login 222</h6>
       <section>
         <div className="form-group custom-input">
@@ -69,8 +69,8 @@ const Login = () => {
           </div>
         ) : null}
       </section>
-      <button type="submit" className="btn btn-blue">
-        SIgn in
+      <button type="submit" className="btn btn-blue" onClick={e => handleSubmit(e)}>
+        Submit
       </button>
     </form>
   )

@@ -2,7 +2,6 @@ import httpService from './http.service'
 
 class UserService {
   async login(user) {
-    console.log('User', user)
     return httpService.apiRequest('post', 'api/auth/public/user', user)
     // return {
     //   email: 'Jelena',
