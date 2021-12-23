@@ -8,15 +8,15 @@ const initialState = {
   isModifying: false,
   error: null
 }
-const notSubmitting = (state) => {
+const notSubmitting = state => {
   console.log('notSubmitting')
   state.isModifying = false
 }
-const startSubmitting = (state) => {
+const startSubmitting = state => {
   console.log('startSubmitting')
   state.isModifying = true
 }
-const isFailure = (state) => {
+const isFailure = state => {
   console.log('isFailure')
   state.isModifying = true
 }
@@ -37,7 +37,7 @@ const slice = createSlice({
       console.log('slcie err', state, action)
     }
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     // add your async reducers here
     builder.addCase(login.pending, startSubmitting)
     builder.addCase(login.fulfilled, notSubmitting)

@@ -17,7 +17,7 @@ export const slice = createSlice({
       state.name = name
       state.size = size
     },
-    closeModal: (state) => {
+    closeModal: state => {
       state.show = false
     }
   }

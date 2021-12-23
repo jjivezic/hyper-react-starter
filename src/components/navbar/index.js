@@ -9,7 +9,7 @@ import './navbar.scss'
 const Navbar = () => {
   const { t } = useTranslation()
   // const dispatch = useDispatch()
-  const store = useSelector((state) => state)
+  const store = useSelector(state => state)
   const logout = () => {
     // dispatch(userActions.logout())
   }
