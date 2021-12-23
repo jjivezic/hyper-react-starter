@@ -16,3 +16,5 @@ npx husky add .husky/pre-commit "lint-staged"
 git add .husky/pre-commit
 
 - if not working check path in /.husky pre-comit file should be ./node_modules/.bin/lint-staged instead lint-staged
+
+node version  node 14 (nvm use  v14.17.6)
