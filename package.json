@@ -31,7 +31,8 @@
     "test:lint": "eslint src --ext .js",
     "fix:lint": "eslint --fix src --ext .js",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json}",
-    "formatCss": "prettier --write src/**/*.{scss,css}"
+    "formatCss": "prettier --write src/**/*.{scss,css}",
+    "lint-staged":"lint-staged"
   },
   "husky": {
     "hooks": {
