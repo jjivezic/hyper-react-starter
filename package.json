@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "axios": "^0.21.4",
     "font-awesome": "^4.7.0",
     "i18next": "^20.6.1",
@@ -18,11 +18,11 @@
     "react-modal": "^3.14.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.0",
     "react-toastify": "^8.0.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -66,6 +66,7 @@
     "husky": "^4.3.8",
     "lint-staged": "^11.1.2",
     "prettier": "2.4.1",
-    "standard": "^16.0.3"
+    "standard": "^16.0.3",
+    "babel-eslint": "^10.1.0"
   }
 }
