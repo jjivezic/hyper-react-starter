@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// import { useDispatch } from 'react-redux'
-// import { userActions } from 'store/actions/user.actions'
-// import { userActions } from 'store/actions/user.actions'
 import { login } from 'store/reducers/auth/thunk'
 
 const Login = () => {
@@ -13,7 +10,7 @@ const Login = () => {
     email: '',
     password: ''
   })
-  console.log('Sotree in LOGIN', store)
+  console.log('LOGIN PAGE STORE', store)
   const handleChange = e => {
     setError(false)
     const { name, value } = e.target
@@ -23,9 +20,8 @@ const Login = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     if (validateForm()) {
-      const b = await dispatch(login({ data: userData, mode: 'login' }))
-      console.log('after', b)
-      console.log('Sotree in LOGIN3333', store)
+      const res = await dispatch(login({ data: userData, mode: 'login' }))
+      console.log('LOGIN PAGE RESPONSE', res)
     } else {
       setError(true)
     }
@@ -35,12 +31,12 @@ const Login = () => {
     return userData.email && userData.password
   }
   if (store.auth.error) {
-    console.log('greskaaaa', store.auth)
+    console.log('LOGIN GRESKA', store.auth)
   }
 
   return (
     <form className="auth-form" style={{ textAlign: 'center' }}>
-      {store.auth.error && <h1>{store.auth.error}</h1>}
+      {store.auth.error && <h1>{store.auth.error.message}</h1>}
       <h6 className="auth-title">Login 222</h6>
       <section>
         <div className="form-group custom-input">

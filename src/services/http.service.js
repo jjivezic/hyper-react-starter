@@ -6,23 +6,23 @@ import toastService from './toastService'
 axios.interceptors.response.use(
   response => {
     // Returns response body
-    return response.data
+    return response.data.data
   },
   async error => {
     // Handle response error
-    _handleError(error)
-    return Promise.reject(error)
+    const errorRes = await _handleError(error)
+    return Promise.reject(errorRes)
     // }
   }
 )
 // const refreshToken = async (err) => {
-//     let response = await apiRequest('get', 'user/token/refreshToken');
+//     let response = await request('get', 'user/token/refreshToken');
 //     if (response) {
 //         sessionService.updateUser(response);
 //         let cutUrl = getRoute(err.config.url, '/', 3);
 //         let url = err.config.url.slice(cutUrl + 1);
 //         let data = (err.config.data ? JSON.parse(err.config.data) : null)
-//         return await apiRequest(err.config.method, url, data);
+//         return await request(err.config.method, url, data);
 //     } else {
 //         _handleError(err);
 //     }
@@ -31,7 +31,7 @@ axios.interceptors.response.use(
 // const getRoute = (string, subString, index) => {
 //     return string.split(subString, index).join(subString).length;
 // }
-const apiRequest = async (method, apiUrl, body, headers) => {
+const request = async (method, apiUrl, body, headers) => {
   try {
     const apiToken = localStorageService.getSessionToken()
     const refreshToken = localStorageService.getSessionRefreshToken()
@@ -57,7 +57,9 @@ const outsideRequest = async (method, url, body, headers) => {
 }
 
 const _handleError = async err => {
+  const errRes = {}
   if (err && err.response) {
+    errRes.status = err.response.status
     if (err.response.status === 403) {
       localStorage.destroy()
       window.location.replace('/')
@@ -65,16 +67,14 @@ const _handleError = async err => {
     let errorText
     if (err.response.data && err.response.data.error && err.response.data.error.message) {
       errorText = err.response.data.error.message
+      errRes.message = err.response.data.error.message
     } else {
       errorText = err.response.statusText
+      errRes.message = err.response.statusText
     }
     toastService.show('error', errorText)
   }
-
-  return err
+  return errRes
 }
 
-export default {
-  apiRequest,
-  outsideRequest
-}
+export { request, outsideRequest }
