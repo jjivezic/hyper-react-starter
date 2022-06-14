@@ -1,17 +1,17 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-// import { userActions } from 'store/actions/user.actions'
 import LanguageSelector from 'components/language'
+import { logout } from 'store/reducers/auth/authSlice'
 import './navbar.scss'
 
 const Navbar = () => {
   const { t } = useTranslation()
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const store = useSelector(state => state)
-  const logout = () => {
-    // dispatch(userActiNS.logout())
+  const logoutUser = () => {
+    dispatch(logout())
   }
   console.log('STORE', store)
   return (
@@ -33,13 +33,7 @@ const Navbar = () => {
             <NavLink to="/login">{t('navbar.link.login')}</NavLink>
           </li>
         )}
-        <li>
-          {store.auth.user && (
-            <a href="#" onClick={logout}>
-              Logout
-            </a>
-          )}
-        </li>
+        <li>{store.auth.user && <span onClick={logoutUser}>Logout</span>}</li>
       </ul>
       <ul>
         <div className="lng-Link">

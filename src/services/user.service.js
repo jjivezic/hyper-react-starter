@@ -20,7 +20,13 @@ class UserService {
   }
 
   async register(user) {
-    return request('post', 'user/register', user)
+    return request('post', 'api/auth', {
+      mode: 'register',
+      data: {
+        user,
+        socialType: 'base'
+      }
+    })
   }
 
   async getUserById(id) {

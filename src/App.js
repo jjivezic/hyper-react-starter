@@ -14,7 +14,7 @@ const App = () => {
   }, [])
 
   return (
-    <div className="App">
+    <div id="App">
       <Suspense fallback="add loader here">
         <main className="main-wrapper">
           <BrowserRouter history={history}>
