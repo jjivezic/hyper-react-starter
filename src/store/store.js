@@ -19,7 +19,7 @@ const rootReducer = (state, action) => {
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger),
+  middleware: getDefaultMiddleware => [...getDefaultMiddleware(), logger],
   devTools: process.env.NODE_ENV !== 'prod'
 })
 
