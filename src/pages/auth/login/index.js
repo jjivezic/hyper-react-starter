@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { incrementByAmount } from 'store/reducers/auth/authSlice'
 import { login } from 'store/reducers/auth/thunk'
 
 const Login = () => {
@@ -19,8 +20,9 @@ const Login = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    dispatch(incrementByAmount(5))
     if (validateForm()) {
-      const res = await dispatch(login({ data: userData, mode: 'login' }))
+      const res = await dispatch(login(userData))
       console.log('LOGIN PAGE RESPONSE', res)
     } else {
       setError(true)

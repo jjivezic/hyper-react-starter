@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense } from 'react'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 import './App.scss'
 import { Routes } from './routes/routes'
@@ -17,9 +17,9 @@ const App = () => {
     <div className="App">
       <Suspense fallback="add loader here">
         <main className="main-wrapper">
-          <HashRouter history={history}>
+          <BrowserRouter history={history}>
             <Routes />
-          </HashRouter>
+          </BrowserRouter>
         </main>
       </Suspense>
     </div>

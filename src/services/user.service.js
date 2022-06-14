@@ -2,7 +2,13 @@ import { request } from './http.service'
 
 class UserService {
   async login(user) {
-    return request('post', 'api/auth/public/user', user)
+    return request('post', 'api/auth', {
+      mode: 'login',
+      data: {
+        user,
+        socialType: 'base'
+      }
+    })
     // return {
     //   email: 'Jelena',
     //   token: 'to79472hsf%#&hHFFOS'

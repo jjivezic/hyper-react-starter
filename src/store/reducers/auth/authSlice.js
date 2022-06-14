@@ -5,35 +5,40 @@ import { login } from './thunk'
 const initialUser = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
 const initialState = {
   user: initialUser,
-  loading: false,
-  error: null
+  error: null,
+  value: 0
 }
 
-const slice = createSlice({
+const auth = createSlice({
   name: 'auth',
   initialState,
   reducers: {
     // add your non- async reducers here
-    // addUser: (state, action) => {
-    //   state.loading = true
-    //   state.user = action.payload
-    //   console.log('reducers addUser', state, action)
-    // },
+    increment(state) {
+      state.value++
+    },
+    decrement(state) {
+      state.value--
+    },
+    incrementByAmount(state, action) {
+      state.value += action.payload
+    }
   },
   extraReducers: builder => {
     // add your async reducers here
     builder.addCase(login.fulfilled, (state, action) => {
       // Immer return state in Proxies form to read curent state you need use current form( @reduxjs/toolkit)
-      console.log('extraReducers success', current(state), action.payload)
+      console.log('auth login extraReducers success', current(state), action.payload)
       localStorageService.set('user', action.payload)
       state.user = action.payload
       state.error = null
     })
     builder.addCase(login.rejected, (state, action) => {
-      console.log('extraReducers error', action)
+      console.log('auth login extraReducers error', action)
       state.error = action.error
     })
   }
 })
 
-export default slice.reducer
+export const { increment, decrement, incrementByAmount } = auth.actions
+export default auth.reducer

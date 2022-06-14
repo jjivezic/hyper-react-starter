@@ -11,7 +11,7 @@ const Navbar = () => {
   // const dispatch = useDispatch()
   const store = useSelector(state => state)
   const logout = () => {
-    // dispatch(userActions.logout())
+    // dispatch(userActiNS.logout())
   }
   console.log('STORE', store)
   return (
