@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { incrementByAmount } from 'store/reducers/auth/authSlice'
+import { incrementByAmount, getUserError, getUser, getUserStatus, getOneDummyData } from 'store/reducers/auth/authSlice'
 import { login } from 'store/reducers/auth/thunk'
 
 const Login = () => {
   const store = useSelector(state => state)
+  const userError = useSelector(getUserError)
+  const user = useSelector(getUser)
+  const userStatus = useSelector(getUserStatus)
+  const getOneDummy = useSelector(state => getOneDummyData(state,2))
   const [error, setError] = useState(false)
   const dispatch = useDispatch()
   const [userData, setUserData] = useState({
     email: '',
     password: ''
   })
-  console.log('LOGIN PAGE STORE', store)
+  console.log('LOGIN PAGE STORE', store, user, userStatus,getOneDummy)
   const handleChange = e => {
     setError(false)
     const { name, value } = e.target
@@ -28,17 +32,19 @@ const Login = () => {
       setError(true)
     }
   }
+  const status = 'idle'
 
   const validateForm = () => {
-    return userData.email && userData.password
+    const { email, password } = userData
+    return [email, password].every(Boolean) && status === 'idle'
   }
-  if (store.auth.error) {
-    console.log('LOGIN GRESKA', store.auth)
-  }
+
+  if (userError) console.log('LOGIN GRESKA', userError)
+
 
   return (
     <form className="auth-form" style={{ textAlign: 'center' }}>
-      {store.auth.error && <h1>{store.auth.error.message}</h1>}
+      {userError && <h1>{userError}</h1>}
       <h6 className="auth-title">Login 222</h6>
       <section>
         <div className="form-group custom-input">

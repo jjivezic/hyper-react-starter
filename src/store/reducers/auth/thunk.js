@@ -7,3 +7,4 @@ export const login = createAsyncThunk('auth/login', async params => {
 export const register = createAsyncThunk('auth/register', async params => {
   return await userService.register(params)
 })
+
