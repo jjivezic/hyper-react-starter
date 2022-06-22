@@ -1,5 +1,6 @@
 import { createSlice, current } from '@reduxjs/toolkit'
 import { localStorageService } from 'services/localStorage.service'
+import { history } from 'utils'
 import { login, register } from './thunk'
 const dummyData = [
   {
@@ -39,6 +40,9 @@ const authSlice = createSlice({
     logout(state) {
       state.user = null
       localStorageService.destroy('user')
+      localStorageService.destroy('user')
+      sessionStorage.clear()
+      history.push('/')
     }
   },
   extraReducers: builder => {
