@@ -9,7 +9,7 @@ const initialState = {
   value: 0
 }
 
-const auth = createSlice({
+const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
@@ -53,5 +53,5 @@ const auth = createSlice({
   }
 })
 
-export const { logout, increment, decrement, incrementByAmount } = auth.actions
-export default auth.reducer
+export const { logout, increment, decrement, incrementByAmount } = authSlice.actions
+export default authSlice.reducer

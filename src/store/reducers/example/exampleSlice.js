@@ -2,7 +2,7 @@ import { createSlice, current } from '@reduxjs/toolkit'
 import { incrementByAmount } from '../auth/authSlice'
 import { login } from '../auth/thunk'
 
-const example = createSlice({
+const exampleSlice = createSlice({
   name: 'test',
   initialState: { name: '', age: 20, userClone: {} },
   reducers: {
@@ -29,5 +29,5 @@ const example = createSlice({
   }
 })
 
-export const { setUserName } = example.actions
-export default example.reducer
+export const { setUserName } = exampleSlice.actions
+export default exampleSlice.reducer
