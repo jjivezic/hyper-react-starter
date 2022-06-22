@@ -40,7 +40,6 @@ const authSlice = createSlice({
     logout(state) {
       state.user = null
       localStorageService.destroy('user')
-      localStorageService.destroy('user')
       sessionStorage.clear()
       history.push('/')
     }
