@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { incrementByAmount, getUserError, getUser, getUserStatus, getOneDummyData } from 'store/reducers/auth/authSlice'
 import { login } from 'store/reducers/auth/thunk'
 
 const Login = () => {
+  const history = useHistory()
   const store = useSelector(state => state)
   const userError = useSelector(getUserError)
   const user = useSelector(getUser)
@@ -28,6 +30,7 @@ const Login = () => {
     if (validateForm()) {
       const res = await dispatch(login(userData))
       console.log('LOGIN PAGE RESPONSE', res)
+      history.push('/app')
     } else {
       setError(true)
     }
