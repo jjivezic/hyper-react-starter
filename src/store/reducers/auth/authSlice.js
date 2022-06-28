@@ -1,16 +1,18 @@
 import { createSlice, current } from '@reduxjs/toolkit'
 import { localStorageService } from 'services/localStorage.service'
-import { history } from 'utils'
 import { login, register } from './thunk'
 const dummyData = [
   {
-    id: 1, name: 'John'
+    id: 1,
+    name: 'John'
   },
   {
-    id: 2, name: 'Jane'
+    id: 2,
+    name: 'Jane'
   },
   {
-    id: 3, name: 'Bil'
+    id: 3,
+    name: 'Bil'
   }
 ]
 
@@ -41,7 +43,6 @@ const authSlice = createSlice({
       state.user = null
       localStorageService.destroy('user')
       sessionStorage.clear()
-      history.push('/')
     }
   },
   extraReducers: builder => {
@@ -84,7 +85,6 @@ export const getUser = state => state.auth.user
 export const getUserError = state => state.auth.error
 export const getUserStatus = state => state.auth.status
 export const getOneDummyData = (state, id) => state.auth.dummyData.find(e => e.id === id)
-
 
 export const { logout, increment, decrement, incrementByAmount } = authSlice.actions
 export default authSlice.reducer

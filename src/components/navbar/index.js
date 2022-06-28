@@ -1,17 +1,19 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import LanguageSelector from 'components/language'
 import { logout } from 'store/reducers/auth/authSlice'
 import './navbar.scss'
 
 const Navbar = () => {
   const { t } = useTranslation()
+  const history = useHistory()
   const dispatch = useDispatch()
   const store = useSelector(state => state)
-  const logoutUser = () => {
-    dispatch(logout())
+  const logoutUser = async () => {
+    await dispatch(logout())
+    history.push('/')
   }
   console.log('STORE', store)
   return (

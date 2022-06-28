@@ -10,7 +10,7 @@ const Landing = () => {
   const open = () => {
     dispatch(openModal({ content: <SomeComponents />, name: 'Some modal', show: true, size: 'lg' }))
   }
-  console.log('landing',landing)
+
   return (
     <div className={styles.wrapper}>
       <h2>LANDING </h2>
