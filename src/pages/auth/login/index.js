@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { incrementByAmount, getUserError, getUser, getUserStatus, getOneDummyData } from 'store/reducers/auth/authSlice'
 import { login } from 'store/reducers/auth/thunk'
 
 const Login = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const store = useSelector(state => state)
   const userError = useSelector(getUserError)
   const user = useSelector(getUser)
   const userStatus = useSelector(getUserStatus)
-  const getOneDummy = useSelector(state => getOneDummyData(state,2))
+  const getOneDummy = useSelector(state => getOneDummyData(state, 2))
   const [error, setError] = useState(false)
   const dispatch = useDispatch()
   const [userData, setUserData] = useState({
     email: '',
     password: ''
   })
-  console.log('LOGIN PAGE STORE', store, user, userStatus,getOneDummy)
+  console.log('LOGIN PAGE STORE', store, user, userStatus, getOneDummy)
   const handleChange = e => {
     setError(false)
     const { name, value } = e.target
@@ -30,7 +30,7 @@ const Login = () => {
     if (validateForm()) {
       const res = await dispatch(login(userData))
       console.log('LOGIN PAGE RESPONSE', res)
-      history.push('/app')
+      navigate('/app')
     } else {
       setError(true)
     }
@@ -43,7 +43,6 @@ const Login = () => {
   }
 
   if (userError) console.log('LOGIN GRESKA', userError)
-
 
   return (
     <form className="auth-form" style={{ textAlign: 'center' }}>
