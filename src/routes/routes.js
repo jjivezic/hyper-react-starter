@@ -1,6 +1,5 @@
 import React from 'react'
 import { Outlet, useRoutes } from 'react-router-dom'
-import Layout from './layout'
 import Auth from './auth'
 import NonAuth from './nonAuth'
 import Landing from 'pages/landing'
@@ -13,12 +12,13 @@ import TestRoute3 from 'pages/testRoutes/testRoute3'
 import TestRoute4 from 'pages/testRoutes/testRoute4'
 import Users from 'pages/testRoutes/users'
 import User from 'pages/testRoutes/user'
+import App from 'App'
 
 const AppRoutes = () => {
   const element = useRoutes([
     {
       path: '/',
-      element: <Layout />,
+      element: <App />,
       children: [
         // routes that can be accessed by both auth and non-auth users
         { path: '', element: <Landing /> },
