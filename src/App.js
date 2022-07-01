@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
+import 'react-toastify/dist/ReactToastify.css'
 import './App.scss'
 
 const App = () => {
