@@ -13,7 +13,7 @@ const Navbar = () => {
   const store = useSelector(state => state)
   const logoutUser = async () => {
     await dispatch(logout())
-    navigate('/')
+    navigate('/', { replace: true })
   }
   console.log('STORE', store)
   return (
