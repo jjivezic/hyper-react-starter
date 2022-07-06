@@ -1,18 +1,18 @@
 import React from 'react'
 import { Outlet, useRoutes } from 'react-router-dom'
+import Auth from './auth'
+import NonAuth from './nonAuth'
+import Landing from 'pages/landing'
+import Login from 'pages/auth/login'
+import Dashboard from 'pages/dashboard'
+import NotFound from 'pages/notFound'
+import TestRoute1 from 'pages/testRoutes/testRoute1'
+import TestRoute2 from 'pages/testRoutes/testRoute2'
+import TestRoute3 from 'pages/testRoutes/testRoute3'
+import TestRoute4 from 'pages/testRoutes/testRoute4'
+import Users from 'pages/testRoutes/users'
+import User from 'pages/testRoutes/user'
 import App from 'App'
-const Auth = React.lazy(() => import('./auth'))
-const NonAuth = React.lazy(() => import('./nonAuth'))
-const Landing = React.lazy(() => import('pages/landing'))
-const Login = React.lazy(() => import('pages/auth/login'))
-const Dashboard = React.lazy(() => import('pages/dashboard'))
-const NotFound = React.lazy(() => import('pages/notFound'))
-const TestRoute1 = React.lazy(() => import('pages/testRoutes/testRoute1'))
-const TestRoute2 = React.lazy(() => import('pages/testRoutes/testRoute2'))
-const TestRoute3 = React.lazy(() => import('pages/testRoutes/testRoute3'))
-const TestRoute4 = React.lazy(() => import('pages/testRoutes/testRoute4'))
-const Users = React.lazy(() => import('pages/testRoutes/users'))
-const User = React.lazy(() => import('pages/testRoutes/user'))
 
 const AppRoutes = () => {
   const element = useRoutes([
@@ -21,7 +21,7 @@ const AppRoutes = () => {
       element: <App />,
       children: [
         // routes that can be accessed by both auth and non-auth users
-        { path: '', element: <Landing /> }, // it will be the base component because have path equal to ''
+        { path: '', element: <Landing /> },
         {
           path: 'test-route-1',
           element: <TestRoute1 />,

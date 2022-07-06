@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { incrementByAmount, getUserError, getUser, getUserStatus, getOneDummyData } from 'store/reducers/auth/authSlice'
 import { login } from 'store/reducers/auth/thunk'
 
 const Login = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/'
   const store = useSelector(state => state)
   const userError = useSelector(getUserError)
   const user = useSelector(getUser)
@@ -29,8 +31,14 @@ const Login = () => {
     dispatch(incrementByAmount(5))
     if (validateForm()) {
       const res = await dispatch(login(userData))
-      console.log('LOGIN PAGE RESPONSE', res)
-      navigate('/app')
+      console.log('LOGIN PAGE RESPONSE', res, from)
+      navigate(from, { replace: true })
+      // Send them back to the page they tried to visit when they were
+      // redirected to the login page. Use { replace: true } so we don't create
+      // another entry in the history stack for the login page.  This means that
+      // when they get to the protected page and click the back button, they
+      // won't end up back on the login page, which is also really nice for the
+      // user experience.
     } else {
       setError(true)
     }

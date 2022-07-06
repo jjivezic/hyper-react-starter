@@ -12,13 +12,20 @@ const App = () => {
   const store = useSelector(state => state)
   return (
     <main className="main-wrapper">
-      <Navbar />
-      {store.modal.show ? (
-        <ModalWrapper show={store.modal.show} content={store.modal.content} size={store.modal.size} />
-      ) : null}
-      {/* <Socket/> */}
-      <ToastContainer className="toast" toastClassName="toast-wrapper" bodyClassName="toast-body" closeButton={false} />
-      <Outlet />
+      <React.Suspense fallback={<>Loading</>}>
+        <Navbar />
+        {store.modal.show ? (
+          <ModalWrapper show={store.modal.show} content={store.modal.content} size={store.modal.size} />
+        ) : null}
+        {/* <Socket/> */}
+        <ToastContainer
+          className="toast"
+          toastClassName="toast-wrapper"
+          bodyClassName="toast-body"
+          closeButton={false}
+        />
+        <Outlet />
+      </React.Suspense>
     </main>
   )
 }
